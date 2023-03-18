@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet'>
+    <style>
+        body {
+            position: relative;
+  height: auto;
+  min-height: 100% !important;
+            display: flex;
+            flex-direction: column;
+            
+            align-items: center;
+        
+            margin: 0;
+           padding: 0;
+           background-color: #382822;
+           background-image:url(istockphoto-921353054-612x612.jpg);
+
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+        }
+
+        .sidebar {
+            border-radius: 7px;
+            border-left: 15px solid rgb(145, 45, 45);
+            border-right:15px solid rgb(145, 45, 45);
+            padding: 15px;
+            margin-top: 45px;
+            display: flex;
+            width:600px ;
+            justify-content: center;
+            background-color: rgb(182, 158, 125);
+            font-size: 40px;
+            font-family: 'MedievalSharp';
+            margin-bottom: 10px;
+            
+            
+        }
+
+        .sidebar > img {
+            width: 200px;
+            
+        }
+
+        .sidebar > h1 {
+            margin-top: 79px;
+            margin-right: 45px;
+        }
+
+        .shelf {
+        border: solid, 1px;
+        border-radius: 15px;
+        
+        display: grid;
+        width: 86%;
+        height: 662px;
+        min-height: 662px;
+        background-color: antiquewhite;
+        grid-template-columns: repeat(400, 1%);
+        grid-template-rows: repeat(auto-fill, 5%);
+        }
+
+        
+        .Add > img {
+            width: 30px;
+           
+            
+        }
+
+        .Add {
+            grid-column: 3;
+            grid-row: 2;
+            height: fit-content;
+            width: 300px;
+            border-radius: 10px;
+            font-family: 'MedievalSharp';
+            font-weight: bolder;
+            font-size: 50px;
+        }
+
+        .Add:hover {
+            width: 302px;
+          
+            border: 9px solid rgb(110, 63, 63);
+        }
+
+    
+
+    
+        .slec {
+            display: flex;
+            gap: 8px;
+        }
+
+        .form {
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+           align-self: center;
+           margin-top: 200px;
+           visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: rgb(87, 30, 8);
+            width: 300px;
+            height: 400px;
+            font-family: 'MedievalSharp';
+            font-size: larger;
+            padding: 10px;
+        }
+
+        .formm {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+        }
+
+        .sub {
+            margin-top: 10px;
+        }
+
+        
+
+        #main {
+            height: 100%;
+            width: 100%;
+        }
+
+        .book {
+            
+            flex: 1, 1, 30%;
+            background-color: #382822;
+            background-image: url(c1264b2eefbbab5272330b4e6a7343b4.jpg);
+            height: fit-content;
+            min-height: 300px;
+            min-width: 300px;
+            width: fit-content;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            font-family: 'MedievalSharp';
+            font-weight: bolder;
+            font-size: larger;
+            
+        }
+
+        .book > p {
+            border-radius: 10px;
+            color: white;
+            padding: 5px;
+            background-color: #382822;
+            width: fit-content;
+            margin-left: 10px;
+        }
+
+        .hold {
+            display: block;
+            
+            gap: 15px;
+            display:block;
+            overflow:auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            grid-column: 2;
+            width: 1600px;
+            height: 100%;
+            min-height: 500px;
+           grid-row: 5;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+          
+        }
+
+        .trch {
+            width: 250px;
+            margin-bottom: 10px;
+        }
+
+        #main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .topp {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size: larger;
+            color: white;
+            width: 100%;
+            background-color: #382822;
+            height: 90px;
+            
+        }
+
+        .checksmall {
+            margin-left: 10px;
+        }
+
+        .cancel {
+            border-radius: 10px;
+            margin-left: 10px;
+            align-self: flex-start;
+            justify-self: flex-end;
+            border: 1px solid red;
+        
+            margin-top: 3px;
+            margin-right: 3px;
+            
+
+        }
+
+        .lis {
+            margin-left: 5px;
+        }
+
+        .cancel:hover {
+            
+            border: 5px solid red;
+        }
+
+        .plzgodwork {
+            background-color: #382822;
+            border-radius: 10px;
+            padding: 10px;
+            font-family: 'MedievalSharp';
+            position: absolute;
+           align-self: center;
+           margin-top: 200px;
+           visibility: hidden;
+        }
+
+        .helpme> button {
+            border-radius: 10px;
+            border: 2px solid red;
+            background-color: antiquewhite;
+            padding: 5px;
+            
+        }
+
+        .helpme {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-around;
+          
+        }
+
+        .plzgodwork > div {
+            color: white;
+            
+        }
+
+        .redorgreen {
+            width: 100%;
+            display: flex;
+           height: 70px;
+            justify-content: center;
+            align-items: center;
+            color: white;
+          
+        }
+
+        .redorgreen > button {
+            border-radius: 10px;
+            font-family: 'MedievalSharp';
+
+        }
+
+        .redorgreen > button:hover {
+            border: 3px solid rgb(204, 188, 119);
+            height: 55px;
+            width: 80px;
+        }
+
+
+
+        
+
+        
+
+        
+
+        
+    
+
+    </style>
+</head>
+<body>
+         <div id="main">
+            <div class="top">
+                <img class="trch" src="Torch.webp" alt="">
+                <div class="sidebar">
+                    <h1>Libary</h1>
+                    <img src="books-stack-of-three-svgrepo-com.svg" alt="">
+                </div>
+                <img  class="trch" src="Torch.webp" alt="">
+            </div>
+           
+            <div class="shelf"> 
+                <button class="Add">Add Book <img src="plus-sign-svgrepo-com.svg" alt=""></button>
+                <div class="hold">
+                  
+                    
+                </div>
+                
+            </div>
+
+         </div>
+        
+
+    
+       
+
+        
+            <div class="form">
+                <h1>Add a New Book</h1>
+                <form action="" method="get" class="formm">
+                    <label for="ln">Author:</label>
+                    <input type="text" id="ln" class="fr">
+                    <label for="bn">Book Name:</label>
+                    <input type="text" id="bn" class="fr" required>
+                    <label for="num">Page Number</label>
+                    <input type="number" id="num" class='fr'required>
+                    <div class="slec">
+                        Have You Read This Book?:
+                        <label class="form-control">
+                            <input type="checkbox" name="checkbox" id="check" />
+                        </label>
+                </div>
+                
+                    
+                    
+    
+    
+                </form>
+                <button id='sub' type="submit">Submit</button>
+            </div>
+
+            <div class="plzgodwork">
+                <div>Are you sure you want to delete this book?</div>
+                <div class="helpme">
+                    <button id="finsub" type="submit">i'm Sure!</button>
+                    <button id="finsub2" type="submit">Actually...No! take me back!</button>
+                </div>
+                
+            </div>
+       
+
+     
+   
+    <script>
+        let actualBook = document.querySelector('.hold');
+        let author = document.getElementById('ln')
+        let bookName = document.getElementById('bn');
+        let  pageNumber = document.getElementById('num');
+        let checkbox = document.getElementById('check');
+        let del = document.getElementsByClassName('cancel');
+        let allBooks = document.getElementsByClassName('book');
+        let coloe = document.getElementsByClassName('redorgreen');
+        let got = Array.from(allBooks);
+        
+        let sub1 = document.getElementById('finsub');
+        let sub2 = document.getElementById('finsub2');
+        let sub = document.getElementById('sub');
+        let newdel = [];
+        let ollof = ['1', '2', '3'];
+        let rem;
+        let ohh;
+        let zozz;
+        let mo;
+        let uo;
+        let realdel;
+        let baba;
+       
+
+        //const body = document.body;
+        const addBook = document.querySelector('.Add');
+        const form = document.querySelector('.form');
+        const secform = document.querySelector('.plzgodwork');
+        let cock;
+        let htmlLel = '';
+        let count = 0;
+        let nig;
+        let a;
+        let b;
+        let c;
+        let d;
+        let shelfPlace;
+
+        function libary (author, bookName, pageNumber, readStatus) {
+            this.author = author;
+            this.bookName = bookName;
+            this.pageNumber = pageNumber;
+            this.readStatus = readStatus;
+        }
+       
+        let myLibary = [];
+        
+        function BringUpForm() {
+           addBook.addEventListener('click', a => {
+            a = '';
+            b = '';
+            c = '';
+            d = '';
+            myLibary = [];
+            checkbox.checked = true;
+            pageNumber.value = '';
+            author.value = '';
+            bookName.value = '';
+            document.getElementById("main").style.opacity = '0.6';
+           form.style.visibility = 'visible';})
+        }
+       
+        //bookName.addEventListener('input', e=> {
+            //myLibary += bookName.value;
+
+       // })
+
+       function wrkplz() {
+        sub.addEventListener('click', a => {
+        form.style.visibility = 'hidden'
+        document.getElementById("main").style.opacity = '1';
+        if (author.value === '') {
+             myLibary.push('Not Specified');
+        } else {
+            myLibary.push(author.value.toString());
+        } if (bookName.value === '') {
+            myLibary.push('Not Specified');
+        } else {
+            myLibary.push(bookName.value.toString());
+        } if (pageNumber.value === '') {
+            myLibary.push('Not Specified');
+        } else {
+            myLibary.push(pageNumber.value.toString());
+        }if (checkbox.checked === true) {
+            nig = "green";
+            myLibary.push('Read');
+        } else {
+            nig = "red";
+            myLibary.push('Not Read');
+        }
+       // myLibary.push(checkbox.value.toString());
+        a = myLibary[0];
+        b = myLibary[1];
+        c = myLibary[2];
+        d = myLibary[3];
+        shelfPlace = new libary(a, b, c, d);
+        console.log(shelfPlace.author);
+        console.log(shelfPlace.bookName);
+        console.log(shelfPlace.pageNumber);
+        console.log(shelfPlace.readStatus);
+        count += 1;
+        
+      /// htmlLel += `<div class="book"><div class="topp"><div class='lis'>Book Name: ${shelfPlace.bookName}</div><button class="cancel">X</button></div><p>Author: ${shelfPlace.author}</p><p>Page Numbers: ${shelfPlace.pageNumber}</p><p> Read Status:<input type="checkbox" name="checkbox" class="checksmall" checkbox=${nig}></p></div>,`;
+    newdel.push(`<div class="book"><div class="topp"><div class='lis'>Book Name: ${shelfPlace.bookName}</div><button class="cancel">X</button></div><p>Author: ${shelfPlace.author}</p><p>Page Numbers: ${shelfPlace.pageNumber}</p><div class='redorgreen' style='background-color: ${nig};'><button class='imdone'>Read Status</button></div></div>,`);
+       //actualBook.innerHTML = htmlLel;
+       //first split htmlel into aray seperating from commas, then we popped out the last value which in the array is a comma in this cas everytime, after that we made the innerhtml = newdel.join('') which joined the array into a string with no empty spaces. 
+      realdel = newdel.toString();
+      baba = realdel.split(',');
+       rem = baba.pop();
+      // console.log(baba);
+      
+       let hoe = '';
+       let ass;
+        console.log(newdel);
+       
+       // console.log(ollof);
+    
+      
+     
+   
+    console.log(del);
+    console.log(allBooks);
+           
+     //  document.body.addEventListener( 'click', function ( event ) {
+       //   if (event.target.classList.contains('cancel')) {
+        //   console.log(indexOf(del));
+
+       //}})
+      actualBook.innerHTML= baba.join('');
+
+                
+  
+} );
+
+
+
+       
+        
+        
+
+
+       }
+
+       
+
+        
+
+
+wrkplz()
+
+        
+
+let fuckme = [];
+let boob;
+let broo;
+let thisboy;
+let fag;
+       
+document.body.addEventListener("click", (e) => { // works almost perfectly 
+    
+    if (e.target.classList.contains('cancel')) {
+    for (let i = 0; i<del.length; i++) {
+       del[i].addEventListener('click', r=> {
+       //
+     newdel.splice(i, 1);
+    
+    
+    
+    //  console.log(i);
+       //console.log(newdel);
+       
+      //
+      
+     
+     
+      //ollof.splice(i, 1);
+
+   //console.log(ollof);
+     
+     
+       
+   e.target.parentElement.parentElement.remove();
+     
+        
+       })
+       
+
+    
+       
+       
+    }
+
+    
+   // 
+
+    
+ // fuckme.push(e);
+ // console.log(fuckme);
+   }
+   
+     
+
+   
+
+   
+    
+   })
+
+   document.body.addEventListener("click", (e) => { 
+    if (e.target.classList.contains('imdone')) {
+        for (let i = 0; i<coloe.length; i++) {
+            coloe[i].addEventListener('click', c=> {
+                
+                    if (coloe[i].style.backgroundColor === 'red') {
+                        coloe[i].style.backgroundColor = 'green';
+                    } else {
+                        coloe[i].style.backgroundColor = 'red';
+                    }
+                
+            })
+        }
+    }
+
+    
+    
+   })
+
+   
+
+   //if (e.target.classList.contains('imdone')) {
+     //   let koko = document.getElementsByClassName('redorgreen');
+       // if (koko.style.backgroundColor === 'red') {
+           // koko.style.backgroundColor = 'green';
+       // }
+
+       // if (koko.style.backgroundColor === 'green') {
+           // koko.style.backgroundColor = 'red';
+       // }
+
+   // }
+
+
+
+  
+ //  let nooooo = broo.splice(1, 1);
+   
+
+
+  
+   
+   
+ 
+  
+
+   
+//if (hoe.length > 0) {
+  //  actualBook.innerHTML = hoe;
+
+//} else {
+ //   actualBook.innerHTML= newdel.join('');
+//}
+
+
+
+       ; // when we made it to newdel.toString() it automatically seperated the string with commas so it was the same as hmtlel, we had to join it with empty parenthesis in order for no commas.
+       
+       
+      // if (newdel.length > 0) {
+       
+      // }
+
+      
+      
+     //  for (let i = 0; i<newdel.length)
+     
+      //  for (let i = 0; i<newdel.length; i++) {
+            //del.addEventListener('click', e=> {
+             //   cock = newdel.splice(i, 1, '');
+              //  console.log(cock);
+
+
+
+
+//del.forEach(e => {
+       // e.addEventListener('click', e=> {
+        //    console.log('gay');
+       // })
+       //})
+
+//if (newdel.length > 1) {
+       // del.addEventListener('click', e=> {
+         //   console.log('gay');
+       // })
+   // }
+  // for (let i = 0; i<allBooks.length; i++) {
+      //  allBooks[i].addEventListener('click', e=> {
+       //     console.log('gay');
+      //  })
+     // }
+  
+        
+        
+       
+      // console.log(newdel);
+     // for (let i = 0; i<newdel.length; i++) {
+        
+     //  if 
+
+     // }
+    
+     
+
+// if you want to know how this is working search up event delegation by web dev simplified.
+// basically, because of bubbling when we click on the button it bubbles all the way up to the document
+// which means it is applying a event to the dcuement as well when you click on the button
+// s we just put a event listenr onto the document and then targeted the id cancel which is inside.
+//if (allBooks.length > 0) {
+    //del.forEach(e=> {
+       // e.addEventListener('click', c=> {
+        //    console.log('gay');
+       // })
+     // })
+//}
+
+
+       
+
+    
+
+
+
+       
+          
+
+
+     
+
+     
+
+     //del.addEventListener('click', e => {
+       
+    // })
+
+   
+        
+
+       
+
+        
+
+       
+      BringUpForm();
+     
+      //let gaga = '<div class="book"><div class="topp"><div class="lis">Book Name: ${shelfPlace.bookName}</div><button class="cancel">X</button> </div><p>Author: ${shelfPlace.author}</p><p>Page Numbers: ${shelfPlace.pageNumber}</p><p> Read Status:<input type="checkbox" name="checkbox" id="checksmall" checkbox=${nig}></p></div>';
+      
+     
+   
+    let work = new libary(a, b, c, d);
+   // document.body.addEventListener( 'click', event => {
+     //if (event.target.id === 'cancel') {
+     //   console.log('gay');
+    // }
+    //}) 
+   
+        
+       
+
+        
+       
+      //  const author = document.getElementById('#ln').value;
+       
+        
+
+       
+
+        
+        //let gaga = 'the nigga';
+        //let zmaa = 'boott man'
+        //myLibary.push(gaga);
+        //  myLibary.push(zmaa);
+
+
+   
+    
+        //document.body.addEventListener( 'click', function ( event ) {
+        
+       
+        //if (event.target.classList.contains('cancel')) {
+
+        
+           
+
+       // }
+    //})
+        
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,480 @@
+   <div class="form">
+            <h1>Add a New Book</h1>
+            <form action="" method="get" class="formm">
+                <label for="ln">Author:</label>
+                <input type="text" id="ln">
+                <label for="bn">Book Name:</label>
+                <input type="text" id="bn" required>
+                <label for="num">Page Number</label>
+                <input type="number" id="num" required>
+                <div class="slec">
+                    Have You Read This Book?:
+                    <select class="opti" name ='yorn'>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+
+                </div>
+                
+                <button class='sub' type="submit">Submit</button>
+
+
+            </form>
+        </div>
+
+         '<div class="form"><h1>Add a New Book</h1><form action="" method="get" class="formm"><label for="ln">Author:</label><input type="text" id="ln"><label for="bn">Book Name:</label><input type="text" id="bn" required><label for="num">Page Number</label>  <input type="number" id="num" required><div class="slec">Have You Read This Book?:<select class="opti" name ="yorn"><option value="Yes">Yes</option>  <option value="No">No</option></select></div><button class="sub" type="submit">Submit</button></form></div>'
+
+
+           .holder {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            gap: 10px;
+            background-color: black;
+            width: fit-content;
+            height: fit-content;
+            grid-column: 1;
+            grid-row: 5;
+        }
+
+        <div class="topp">Book Name: Zaza</div>
+                        <p>Author: Gary</p>
+                        <p>Page Numbers: 25</p>
+                        <p> Read Status:<input type="checkbox" name="checkbox" id="checksmall"></p>
+
+
+    
+for (let i = 0; i<allBooks.length; i++) {
+           allBooks[i].addEventListener('click', e=> {
+           if ( e.target.matches('.cancel')) {
+            console.log('gya');
+        }
+           })
+        }
+        
+
+        document.body.addEventListener( 'click', function ( event ) {
+        if(event.target.classList.contains('book')) {
+            allBooks.forEach(e=> {
+    e.addEventListener('click', b => {
+        if (b.target.classList.contains('cancel') === true) {
+            console.log('gay');
+        }
+    })
+})
+
+        }
+     })
+
+      document.body.addEventListener( 'click', function ( event ) {
+          if (event.target.classList.contains('cancel')) {
+            newdel.push('gay');
+           // console.log(newdel);
+          for (let i = 0; i<newdel.length; i++) {
+        if (newdel[i] === 'gay') {
+                newdel.splice(i-1, 2);
+            }
+            
+           }
+
+           console.log(newdel);
+
+            
+          }
+
+       })
+
+       document.body.addEventListener( 'click', function ( event ) {
+          if (event.target.classList.contains('cancel')) {
+            
+            ohh = Array.from(htmlLel.split(','));
+            zozz=ohh.pop();
+            ohh.push('gay');
+            for (let i = 0; i<ohh.length; i++) {
+                if (ohh[i] === 'gay') {
+                    ohh.splice(i-1, 2);
+                }
+            }
+
+            actualBook.innerHTML= ohh.join('');
+            mo = newdel.pop();
+           // console.log(newdel);
+          // for (let i = 0; i<newdel.length; i++) {
+            //if (newdel[i] === 'gay') {
+                //newdel.splice(i-1, 2);
+           // }
+            
+           //}
+
+
+
+
+           
+
+            
+          }
+
+       })
+
+
+function get() {
+    for (let i = 0; i<del.length; i++) {
+        del[i].addEventListener('click', e=> {
+            return i;
+        })
+        break;
+    }
+}
+
+get();
+
+
+
+//somewhat working but problem accessing newdel 
+
+    document.body.addEventListener( 'click', function ( event ) {
+         if (event.target.classList.contains('cancel')) { 
+             
+                for (let i = 0; i < Array.from(del).length; i++) {
+                del[i].addEventListener('click', e=> {
+                    event.target.parentElement.parentElement.remove();
+                    ollof.splice(i, 1);
+                    // okay so when we splice its at least recognizing the index of del. the remove fucntion isnt working, maybe work on the newdel.
+                
+                 
+                 
+                })
+                
+            }
+
+            
+            console.log(ollof);
+            
+        }
+
+    })
+
+
+    document.body.addEventListener( 'click', function ( event ) {
+         if (event.target.classList.contains('.book')) {
+            for (let i = 0; i<allBooks.length; i++) {
+        allBooks[i].addEventListener('click', function(event) {
+            if (event.target.classList.contains('cancel')) { 
+                console.log(i);
+
+            }
+        } )
+      }
+         }
+        }) 
+            
+
+  let go = newdel.push(htmlLel);
+       //let plz = newdel.toString();
+       //let helpme = plz.split(',');
+       
+       let hoe = '';
+       let ass;
+      // helpme.pop();
+      
+       //console.log(newdel);
+    
+      
+     
+   
+    
+           
+     //  document.body.addEventListener( 'click', function ( event ) {
+       //   if (event.target.classList.contains('cancel')) {
+        //   console.log(indexOf(del));
+
+       //}})
+     //  actualBook.innerHTML= helpme.join('');
+
+                
+  
+} );
+
+
+//actualBook.innerHTML = newdel.toString().split(',').join('');
+
+       
+        
+console.log(newdel);
+
+
+
+document.body.addEventListener( 'click', function ( event ) {
+       let olof = [];
+      // let ruru;
+       let goi = 0;
+       let tutu = 0;
+    //   for (let i = 0; i < Array.from(del).length; i++) {  
+                    
+                   // if (i === 0) {
+                   //   goi = 0;
+                    //} else {
+                    //  goi += 287;
+                    //}
+                     
+                              
+          
+                          
+                     // }
+
+
+         if (event.target.classList.contains('cancel')) { 
+            
+            for (let i = 0; i < Array.from(del).length; i++) {  
+                 tutu += 286;   
+                 
+                del[i].addEventListener('click', e=> {
+                   
+                  olof = [...(actualBook.innerHTML)].splice(0, 286);
+                
+
+
+                   //event.target.parentElement.parentElement.remove();
+                   //ollof.splice(i, 1);
+                   
+                   
+                  
+                   // okay so when we splice its at least recognizing the index of del. the remove fucntion isnt working, maybe work on the newdel.
+               
+                
+                
+               })
+              
+                              
+          
+                          
+                      }
+
+                      console.log(olof);
+        
+
+            
+
+            
+           
+          
+            
+            //console.log(goi);
+            
+        }
+
+        
+https://stackoverflow.com/questions/75611928/how-do-i-assign-data-attributes-to-elements-inside-an-array-that-allows-me-to-re
+
+https://stackoverflow.com/questions/73061343/how-to-use-event-delegation-to-target-desired-class
+
+
+
+
+document.body.addEventListener("click", (e) => { // works almost perfectly 
+    
+    if (e.target.classList.contains('cancel')) {
+    for (let i = 0; i<del.length; i++) {
+       del[i].addEventListener('click', r=> {
+       //
+     newdel.splice(i, 1);
+    
+    
+    
+    //  console.log(i);
+       //console.log(newdel);
+       
+      //
+      
+     
+     
+      //ollof.splice(i, 1);
+
+   //console.log(ollof);
+     
+     
+       
+   e.target.parentElement.parentElement.remove();
+     
+        
+       })
+       
+
+    
+       
+       
+    }
+
+    
+   // 
+
+    
+ // fuckme.push(e);
+ // console.log(fuckme);
+   }
+   
+     
+
+   
+
+   
+    
+   })
+
+
+
+
+     if (e.target.classList.contains('cancel')) {
+    for (let i = 0; i<del.length; i++) {
+       del[i].addEventListener('click', r=> {
+       //
+     newdel.splice(i, 1);
+    
+    
+    
+    //  console.log(i);
+       //console.log(newdel);
+       
+      //
+      
+     
+     
+      //ollof.splice(i, 1);
+
+   //console.log(ollof);
+     
+     
+       
+   e.target.parentElement.parentElement.remove();
+     
+        
+       })
+       
+
+    
+       
+       
+    }
+
+    
+   // 
+
+    
+ // fuckme.push(e);
+ // console.log(fuckme);
+   }
+   
+
+
+
+
+    for (let i = 0; i<del.length; i++) {
+       del[i].addEventListener('click', r=> {
+       //
+     newdel.splice(i, 1);
+    
+    
+    
+    //  console.log(i);
+       //console.log(newdel);
+       
+      //
+      
+     
+     
+      //ollof.splice(i, 1);
+
+   //console.log(ollof);
+     
+     
+       
+   allBooks[i].remove();
+   console.log(del);
+     
+        
+       })
+       
+
+    
+       
+       
+    }
+
+    
+   // 
+
+    
+ // fuckme.push(e);
+ // console.log(fuckme);
+   }
+
+
+
+
+
+
+
+   
+
+
+let fuckme = [];
+let boob;
+let broo;
+let thisboy;
+let fag;
+       
+document.body.addEventListener("click", (e) => {
+    for (let i = 0; i<del.length; i++) {
+       del[i].addEventListener('click', r=> {
+       //
+       boob = i;
+
+       //console.log(boob);
+    
+    
+    //  console.log(i);
+       //console.log(newdel);
+       
+      //
+      
+     
+     
+      //ollof.splice(i, 1);
+
+   //console.log(ollof);
+     
+     
+       
+  // allBooks[i].remove();
+   //console.log(del);
+     
+        
+       })
+       
+
+    
+       
+       
+    }
+    if (e.target.classList.contains('cancel')) {
+      
+        document.getElementById("main").style.opacity = '0.6';
+        secform.style.visibility = 'visible';
+      
+    } 
+    
+   })
+
+
+   sub1.addEventListener('click', e=> {
+    broo = newdel;
+    newdel.splice(boob, 1);
+    //thisboy = broo.splice(boob, 1);
+    actualBook.innerHTML = broo;
+    secform.style.visibility = 'hidden';
+    document.getElementById("main").style.opacity = '1';
+
+   
+  
+   
+   })
